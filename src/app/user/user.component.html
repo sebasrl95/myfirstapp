@@ -1,4 +1,29 @@
+<form (submit)="addUser(newUser)">
+  <input type="text" #newUser>
+  <button>
+    Send User
+  </button>
+</form>
 
-<li>
-  {{nameUser}}
-</li>
+<ul>
+  <li *ngFor="let user of users">
+    {{user}} - <button (click)="deleteUser(user)">X</button>
+  </li>
+</ul>
+
+<div>
+  <form>
+    <input type="text" name="name" [(ngModel)]="name">
+    <input type="text" name="age" [(ngModel)]="age">
+  </form>
+
+  name: {{name}} <br />
+  age: {{age}}
+</div>
+
+<hr/>
+
+<div *ngFor="let post of posts">
+  <h3>{{post.title}}</h3>
+  <p>{{post.body}}</p>
+</div>
